@@ -1,5 +1,5 @@
 {
-  "name": "0auth",
+  "name": "0auth-sdk",
   "version": "0.0.1",
   "description": "0auth-js-sdk",
   "main": "index.js",
