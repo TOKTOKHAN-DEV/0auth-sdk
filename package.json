@@ -15,7 +15,7 @@
     "login"
   ],
   "author": "toktokhan.dev",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/TokTokHan/0auth-js-sdk/issues"
   },
