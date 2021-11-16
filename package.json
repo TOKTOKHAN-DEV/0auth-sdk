@@ -15,6 +15,9 @@
     "login"
   ],
   "author": "toktokhan.dev",
+  "bin": {
+    "log-run": "bin/cli.js"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/TokTokHan/0auth-js-sdk/issues"
