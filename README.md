@@ -22,7 +22,7 @@ yarn add 0auth-sdk
 Initializing 
 
 ```js
-import Auth from 'utils/0auth';
+import Auth from '0auth-sdk';
 
 ...
  useEffect(() => {
