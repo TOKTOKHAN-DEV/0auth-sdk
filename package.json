@@ -1,14 +1,14 @@
 {
   "name": "0auth-sdk",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "0auth-js-sdk",
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TokTokHan/0auth-js-sdk.git"
+    "url": "git+https://github.com/TokTokHan/0auth-sdk.git"
   },
   "keywords": [
     "auth",
@@ -20,10 +20,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TokTokHan/0auth-js-sdk/issues"
+    "url": "https://github.com/TokTokHan/0auth-sdk/issues"
   },
-  "homepage": "https://github.com/TokTokHan/0auth-js-sdk#readme",
-  "dependencies": {
-    "jsonwebtoken": "^8.5.1"
-  }
+  "homepage": "https://github.com/TokTokHan/0auth-sdk#readme"
 }
