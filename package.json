@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/TokTokHan/0auth-js-sdk/issues"
   },
-  "homepage": "https://github.com/TokTokHan/0auth-js-sdk#readme"
+  "homepage": "https://github.com/TokTokHan/0auth-js-sdk#readme",
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1"
+  }
 }
