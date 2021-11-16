@@ -1,8 +1,8 @@
 {
   "name": "0auth-sdk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "0auth-js-sdk",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
