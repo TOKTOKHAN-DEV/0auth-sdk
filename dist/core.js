@@ -1,21 +1,33 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.login = exports.initialize = exports.getOption = void 0;
-var _url = "0auth.kr";
-var _init = false;
-var _option = {
-    brand: "",
+var URL = "0auth.kr";
+var OPTION_DEFAULT = {
+    initialized: false,
+    options: {
+        brand: "",
+    },
+};
+var _initialize = function () {
+    window.zeroauth = OPTION_DEFAULT;
 };
 var getOption = function () {
-    return _option;
+    if (typeof window !== "undefined") {
+        return window.zeroauth.options;
+    }
+    return OPTION_DEFAULT.options;
 };
 exports.getOption = getOption;
 var initialize = function (option) {
-    if (!_init) {
-        _option.brand = option.brand;
-        _init = true;
-    }
     if (typeof window !== "undefined") {
+        _initialize();
+        if (!window.zeroauth.initialized) {
+            window.zeroauth.initialized = true;
+            window.zeroauth.options = {
+                brand: option.brand,
+            };
+            console.log("window.zeroauth : ", window.zeroauth);
+        }
         var urlParams = new URLSearchParams(window.location.search);
         var access = urlParams.get("0auth_access");
         var refresh = urlParams.get("0auth_refresh");
@@ -28,10 +40,9 @@ var initialize = function (option) {
 };
 exports.initialize = initialize;
 var login = function () {
-    var option = (0, exports.getOption)();
-    console.log("option : ", option);
-    if (option.brand) {
-        window.location.replace("//" + option.brand + "." + _url + "/?next=" + window.location.href);
+    var options = (0, exports.getOption)();
+    if (options.brand) {
+        window.location.replace("//" + options.brand + "." + URL + "/?next=" + window.location.href);
     }
     else {
         console.error("[Error] initialize app");

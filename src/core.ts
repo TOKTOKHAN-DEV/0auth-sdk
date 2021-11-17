@@ -1,22 +1,43 @@
 import { initProps } from "./types";
 
-const _url = "0auth.kr";
+declare global {
+  interface Window {
+    zeroauth: {
+      initialized: boolean;
+      options: initProps;
+    };
+  }
+}
 
-let _init = false;
-const _option: initProps = {
-  brand: "",
+const URL = "0auth.kr";
+const OPTION_DEFAULT = {
+  initialized: false,
+  options: {
+    brand: "",
+  },
+};
+const _initialize = () => {
+  window.zeroauth = OPTION_DEFAULT;
 };
 
 export const getOption = () => {
-  return _option;
+  if (typeof window !== "undefined") {
+    return window.zeroauth.options;
+  }
+  return OPTION_DEFAULT.options;
 };
 
 export const initialize = (option: initProps) => {
-  if (!_init) {
-    _option.brand = option.brand;
-    _init = true;
-  }
   if (typeof window !== "undefined") {
+    _initialize();
+    if (!window.zeroauth.initialized) {
+      window.zeroauth.initialized = true;
+      window.zeroauth.options = {
+        brand: option.brand,
+      };
+      console.log("window.zeroauth : ", window.zeroauth);
+    }
+
     const urlParams = new URLSearchParams(window.location.search);
     const access = urlParams.get("0auth_access");
     const refresh = urlParams.get("0auth_refresh");
@@ -29,11 +50,10 @@ export const initialize = (option: initProps) => {
 };
 
 export const login = () => {
-  const option = getOption();
-  console.log("option : ", option);
-  if (option.brand) {
+  const options = getOption();
+  if (options.brand) {
     window.location.replace(
-      `//${option.brand}.${_url}/?next=${window.location.href}`
+      `//${options.brand}.${URL}/?next=${window.location.href}`
     );
   } else {
     console.error("[Error] initialize app");
