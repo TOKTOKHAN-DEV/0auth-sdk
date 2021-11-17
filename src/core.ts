@@ -1,6 +1,8 @@
 import { decode } from "jsonwebtoken";
 import { initProps } from "./types";
 
+import CONSTANTS from "./contants";
+
 declare global {
   interface Window {
     zeroauth: {
@@ -22,38 +24,41 @@ const _initialize = () => {
 };
 
 export const getProfile = () => {
+  // Check your login status using the token.
   const token = localStorage.getItem("0auth_token");
   if (token) {
     const jsonToken = JSON.parse(token);
-    const decoded = decode(jsonToken.access, { complete: true });
-    console.log(decoded);
-    return decoded;
+    const result = decode(jsonToken.access, { complete: true });
+    return result;
   } else {
-    console.error("[Error] login");
+    console.error(CONSTANTS.ERROR_LOGIN);
     return null;
   }
 };
+
 export const getOptions = () => {
   if (typeof window !== "undefined") {
     if (window.zeroauth) {
       return window.zeroauth.options;
     } else {
-      console.error("[Error] initialized app");
+      console.error(CONSTANTS.ERROR_INIT);
     }
+  } else {
+    console.error(CONSTANTS.ERROR_WINDOW);
   }
   return OPTION_DEFAULT.options;
 };
 
 export const initialize = (option: initProps) => {
   if (typeof window !== "undefined") {
-    _initialize();
     if (!window.zeroauth.initialized) {
+      _initialize();
       window.zeroauth.initialized = true;
       window.zeroauth.options = {
         brand: option.brand,
       };
     }
-
+    //
     const urlParams = new URLSearchParams(window.location.search);
     const access = urlParams.get("0auth_access");
     const refresh = urlParams.get("0auth_refresh");
@@ -62,6 +67,8 @@ export const initialize = (option: initProps) => {
       localStorage.setItem("0auth_token", JSON.stringify({ access, refresh }));
       window.location.replace(next ? next : "/");
     }
+  } else {
+    console.error(CONSTANTS.ERROR_WINDOW);
   }
 };
 
@@ -70,6 +77,6 @@ export const login = () => {
   if (options.brand) {
     window.location.href = `//${options.brand}.${URL}/?next=${window.location.href}`;
   } else {
-    console.error("[Error] initialized app");
+    console.error(CONSTANTS.ERROR_INIT);
   }
 };
