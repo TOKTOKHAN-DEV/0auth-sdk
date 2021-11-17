@@ -39,7 +39,6 @@ export const initialize = (option: initProps) => {
       window.zeroauth.options = {
         brand: option.brand,
       };
-      console.log("window.zeroauth : ", window.zeroauth);
     }
 
     const urlParams = new URLSearchParams(window.location.search);
