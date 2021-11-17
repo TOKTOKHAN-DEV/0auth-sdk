@@ -39,4 +39,16 @@ import Auth from '0auth-sdk';
   }, []);
 ```
 
+getOptions
+
+```js
+Auth.getOptions()
+```
+
+login
+
+```js
+Auth.login()
+```
+
 
