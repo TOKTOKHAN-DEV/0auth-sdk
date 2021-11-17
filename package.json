@@ -1,6 +1,6 @@
 {
   "name": "0auth-sdk",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "0auth-js-sdk",
   "main": "src/index.ts",
   "scripts": {
