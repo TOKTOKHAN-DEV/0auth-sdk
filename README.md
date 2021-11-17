@@ -34,7 +34,7 @@ Initializing
 import Auth from '0auth-sdk';
 Auth.initialize({ 
   brand: 'test',
-  cliendID: 'ZA-A6FG93C817'
+  cliendId: 'ZA-A6FG93C817'
 });
 ```
 
