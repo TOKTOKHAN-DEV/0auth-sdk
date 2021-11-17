@@ -1,8 +1,9 @@
 {
   "name": "0auth-sdk",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "0auth-js-sdk",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "mocha --reporter spec",
     "build": "tsc"
