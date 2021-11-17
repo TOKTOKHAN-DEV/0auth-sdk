@@ -33,15 +33,13 @@ Initializing
 ```js
 import Auth from '0auth-sdk';
 Auth.initialize({ 
-  brand: 'test',
-  clientId: 'ZA-A6FG93C817'
+  brand: 'test'
 });
 ```
 
 options | type | require | description
 --------|--------|----------------------------|-----
 brand | string | true | set login page link as [brand].0auth.kr
-clientId | string | true | verify client is valid
 
 getOptions
 
