@@ -28,8 +28,10 @@ var initialize = function (option) {
 };
 exports.initialize = initialize;
 var login = function () {
-    if (_option.brand) {
-        window.location.replace("//" + _option.brand + "." + _url + "/?next=" + window.location.href);
+    var option = (0, exports.getOption)();
+    console.log("option : ", option);
+    if (option.brand) {
+        window.location.replace("//" + option.brand + "." + _url + "/?next=" + window.location.href);
     }
     else {
         console.error("[Error] initialize app");

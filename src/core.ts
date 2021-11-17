@@ -29,9 +29,11 @@ export const initialize = (option: initProps) => {
 };
 
 export const login = () => {
-  if (_option.brand) {
+  const option = getOption();
+  console.log("option : ", option);
+  if (option.brand) {
     window.location.replace(
-      `//${_option.brand}.${_url}/?next=${window.location.href}`
+      `//${option.brand}.${_url}/?next=${window.location.href}`
     );
   } else {
     console.error("[Error] initialize app");
