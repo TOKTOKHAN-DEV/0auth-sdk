@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.login = exports.initialize = exports.getOption = void 0;
+exports.login = exports.initialize = exports.getOptions = void 0;
 var URL = "0auth.kr";
 var OPTION_DEFAULT = {
     initialized: false,
@@ -11,7 +11,7 @@ var OPTION_DEFAULT = {
 var _initialize = function () {
     window.zeroauth = OPTION_DEFAULT;
 };
-var getOption = function () {
+var getOptions = function () {
     if (typeof window !== "undefined") {
         if (window.zeroauth) {
             return window.zeroauth.options;
@@ -22,7 +22,7 @@ var getOption = function () {
     }
     return OPTION_DEFAULT.options;
 };
-exports.getOption = getOption;
+exports.getOptions = getOptions;
 var initialize = function (option) {
     if (typeof window !== "undefined") {
         _initialize();
@@ -44,7 +44,7 @@ var initialize = function (option) {
 };
 exports.initialize = initialize;
 var login = function () {
-    var options = (0, exports.getOption)();
+    var options = (0, exports.getOptions)();
     if (options.brand) {
         window.location.replace("//" + options.brand + "." + URL + "/?next=" + window.location.href);
     }

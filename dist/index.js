@@ -11,9 +11,9 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getOption = exports.login = exports.initialize = void 0;
+exports.getOptions = exports.login = exports.initialize = void 0;
 var Defaults = require("./core");
 exports.initialize = Defaults.initialize;
 exports.login = Defaults.login;
-exports.getOption = Defaults.getOption;
+exports.getOptions = Defaults.getOptions;
 exports.default = __assign({}, Defaults);

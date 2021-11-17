@@ -53,7 +53,7 @@ export const initialize = (option: initProps) => {
 };
 
 export const login = () => {
-  const options = getOption();
+  const options = getOptions();
   if (options.brand) {
     window.location.replace(
       `//${options.brand}.${URL}/?next=${window.location.href}`

@@ -7,6 +7,6 @@ declare global {
         };
     }
 }
-export declare const getOption: () => initProps;
+export declare const getOptions: () => initProps;
 export declare const initialize: (option: initProps) => void;
 export declare const login: () => void;

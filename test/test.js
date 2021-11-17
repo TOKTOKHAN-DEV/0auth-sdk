@@ -6,12 +6,12 @@ var Auth = require("../dist/index.js");
 
 describe("setOption Test", () => {
   it("default option", () => {
-    const result = Auth.getOption();
+    const result = Auth.getOptions();
     expect(result.brand).to.equal("");
   });
   it("initialize option", () => {
     Auth.initialize({ brand: "test" });
-    const result = Auth.getOption();
+    const result = Auth.getOptions();
     expect(result.brand).to.equal("test");
   });
 });
