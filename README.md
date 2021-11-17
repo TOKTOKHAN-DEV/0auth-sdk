@@ -36,10 +36,10 @@ Auth.initialize({
   brand: 'test'
 });
 ```
-
 options | type | require | description
 --------|--------|----------------------------|-----
 brand | string | true | set login page link as [brand].0auth.kr
+
 
 getOptions
 
