@@ -22,9 +22,11 @@ const _initialize = () => {
 
 export const getOption = () => {
   if (typeof window !== "undefined") {
-    return window.zeroauth.options
-      ? window.zeroauth.options
-      : OPTION_DEFAULT.options;
+    if (window.zeroauth) {
+      return window.zeroauth.options;
+    } else {
+      console.error("[Error] initialized app");
+    }
   }
   return OPTION_DEFAULT.options;
 };
@@ -58,6 +60,6 @@ export const login = () => {
       `//${options.brand}.${URL}/?next=${window.location.href}`
     );
   } else {
-    console.error("[Error] initialize app");
+    console.error("[Error] initialized app");
   }
 };

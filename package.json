@@ -1,6 +1,6 @@
 {
   "name": "0auth-sdk",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "0auth-js-sdk",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

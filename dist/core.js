@@ -13,9 +13,12 @@ var _initialize = function () {
 };
 var getOption = function () {
     if (typeof window !== "undefined") {
-        return window.zeroauth.options
-            ? window.zeroauth.options
-            : OPTION_DEFAULT.options;
+        if (window.zeroauth) {
+            return window.zeroauth.options;
+        }
+        else {
+            console.error("[Error] initialized app");
+        }
     }
     return OPTION_DEFAULT.options;
 };
@@ -47,7 +50,7 @@ var login = function () {
         window.location.replace("//" + options.brand + "." + URL + "/?next=" + window.location.href);
     }
     else {
-        console.error("[Error] initialize app");
+        console.error("[Error] initialized app");
     }
 };
 exports.login = login;
