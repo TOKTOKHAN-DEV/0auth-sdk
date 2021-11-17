@@ -4,7 +4,8 @@
   "description": "0auth-js-sdk",
   "main": "src/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --reporter spec",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,10 @@
   "bugs": {
     "url": "https://github.com/TokTokHan/0auth-sdk/issues"
   },
-  "homepage": "https://github.com/TokTokHan/0auth-sdk#readme"
+  "homepage": "https://github.com/TokTokHan/0auth-sdk#readme",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.3",
+    "typescript": "^4.4.4"
+  }
 }
