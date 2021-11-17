@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.login = exports.initialize = exports.getOptions = void 0;
+exports.login = exports.initialize = exports.getOptions = exports.getProfile = void 0;
+var jsonwebtoken_1 = require("jsonwebtoken");
 var URL = "0auth.kr";
 var OPTION_DEFAULT = {
     initialized: false,
@@ -11,6 +12,20 @@ var OPTION_DEFAULT = {
 var _initialize = function () {
     window.zeroauth = OPTION_DEFAULT;
 };
+var getProfile = function () {
+    var token = localStorage.getItem("0auth_token");
+    if (token) {
+        var jsonToken = JSON.parse(token);
+        var decoded = (0, jsonwebtoken_1.decode)(jsonToken.access, { complete: true });
+        console.log(decoded);
+        return decoded;
+    }
+    else {
+        console.error("[Error] login");
+        return null;
+    }
+};
+exports.getProfile = getProfile;
 var getOptions = function () {
     if (typeof window !== "undefined") {
         if (window.zeroauth) {
@@ -46,7 +61,7 @@ exports.initialize = initialize;
 var login = function () {
     var options = (0, exports.getOptions)();
     if (options.brand) {
-        window.location.replace("//" + options.brand + "." + URL + "/?next=" + window.location.href);
+        window.location.href = "//" + options.brand + "." + URL + "/?next=" + window.location.href;
     }
     else {
         console.error("[Error] initialized app");

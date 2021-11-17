@@ -1,3 +1,4 @@
+import { decode } from "jsonwebtoken";
 import { initProps } from "./types";
 
 declare global {
@@ -20,6 +21,18 @@ const _initialize = () => {
   window.zeroauth = OPTION_DEFAULT;
 };
 
+export const getProfile = () => {
+  const token = localStorage.getItem("0auth_token");
+  if (token) {
+    const jsonToken = JSON.parse(token);
+    const decoded = decode(jsonToken.access, { complete: true });
+    console.log(decoded);
+    return decoded;
+  } else {
+    console.error("[Error] login");
+    return null;
+  }
+};
 export const getOptions = () => {
   if (typeof window !== "undefined") {
     if (window.zeroauth) {
@@ -55,9 +68,7 @@ export const initialize = (option: initProps) => {
 export const login = () => {
   const options = getOptions();
   if (options.brand) {
-    window.location.replace(
-      `//${options.brand}.${URL}/?next=${window.location.href}`
-    );
+    window.location.href = `//${options.brand}.${URL}/?next=${window.location.href}`;
   } else {
     console.error("[Error] initialized app");
   }
