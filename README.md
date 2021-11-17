@@ -3,10 +3,10 @@
 
 # 0auth-sdk
 
-[![NPM version][npm-image]][npm-url]
+[![NPM version][https://img.shields.io/npm/v/0auth-sdk]][https://www.npmjs.com/package/0auth-sdk]
 [![Coverage][codecov-image]][codecov-url]
-[![License][license-image]][license-url]
-[![Downloads][downloads-image]][downloads-url]
+[![License][https://img.shields.io/npm/l/0auth-sdk]][https://www.npmjs.com/package/0auth-sdk]
+[![Downloads][https://img.shields.io/npm/dm/0auth-sdk]][https://www.npmjs.com/package/0auth-sdk]
 
 Client Side JavaScript toolkit for 0Auth.
 
