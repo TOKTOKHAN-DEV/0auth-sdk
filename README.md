@@ -34,9 +34,14 @@ Initializing
 import Auth from '0auth-sdk';
 Auth.initialize({ 
   brand: 'test',
-  cliendId: 'ZA-A6FG93C817'
+  clientId: 'ZA-A6FG93C817'
 });
 ```
+
+options | require | description
+----------------|----------------------------|-----
+brand | true | set login page link to [brand].0auth.kr
+clientId | true | verify user
 
 getOptions
 
