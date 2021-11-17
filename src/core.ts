@@ -22,7 +22,9 @@ const _initialize = () => {
 
 export const getOption = () => {
   if (typeof window !== "undefined") {
-    return window.zeroauth.options;
+    return window.zeroauth.options
+      ? window.zeroauth.options
+      : OPTION_DEFAULT.options;
   }
   return OPTION_DEFAULT.options;
 };
