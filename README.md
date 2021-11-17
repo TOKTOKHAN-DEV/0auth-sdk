@@ -38,10 +38,10 @@ Auth.initialize({
 });
 ```
 
-options | require | description
-----------------|----------------------------|-----
-brand | true | set login page link to [brand].0auth.kr
-clientId | true | verify user
+options | type | require | description
+--------|--------|----------------------------|-----
+brand | string | true | set login page link to [brand].0auth.kr
+clientId | string | true | verify user
 
 getOptions
 
