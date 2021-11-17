@@ -41,7 +41,7 @@ Auth.initialize({
 options | type | require | description
 --------|--------|----------------------------|-----
 brand | string | true | set login page link as [brand].0auth.kr
-clientId | string | true | verify user
+clientId | string | true | verify client is valid
 
 getOptions
 
