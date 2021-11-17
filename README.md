@@ -1,5 +1,14 @@
-# 0auth-js-sdk
 
+
+
+# 0auth-sdk
+
+[![NPM version][npm-image]][npm-url]
+[![Coverage][codecov-image]][codecov-url]
+[![License][license-image]][license-url]
+[![Downloads][downloads-image]][downloads-url]
+
+Client Side JavaScript toolkit for 0Auth.
 
 ## Installation
 
