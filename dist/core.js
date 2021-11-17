@@ -31,7 +31,6 @@ var initialize = function (option) {
             window.zeroauth.options = {
                 brand: option.brand,
             };
-            console.log("window.zeroauth : ", window.zeroauth);
         }
         var urlParams = new URLSearchParams(window.location.search);
         var access = urlParams.get("0auth_access");
