@@ -20,7 +20,7 @@ const _initialize = () => {
   window.zeroauth = OPTION_DEFAULT;
 };
 
-export const getOption = () => {
+export const getOptions = () => {
   if (typeof window !== "undefined") {
     if (window.zeroauth) {
       return window.zeroauth.options;
