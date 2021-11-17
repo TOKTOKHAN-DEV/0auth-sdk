@@ -32,11 +32,10 @@ Initializing
 
 ```js
 import Auth from '0auth-sdk';
-
-...
- useEffect(() => {
-    Auth.initialize({ brand: 'test' });
-  }, []);
+Auth.initialize({ 
+  brand: 'test',
+  cliendID: 'TEST-A6FG93C817'
+});
 ```
 
 getOptions
@@ -48,7 +47,15 @@ Auth.getOptions()
 login
 
 ```js
+// if initialized, push to 0auth login page
 Auth.login()
+```
+
+getProfile
+
+```js
+// if access token is verified
+Auth.getProfile()
 ```
 
 
