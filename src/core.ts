@@ -51,7 +51,7 @@ export const getOptions = () => {
 
 export const initialize = (option: initProps) => {
   if (typeof window !== "undefined") {
-    if (!window.zeroauth.initialized) {
+    if (window.zeroauth && !window.zeroauth.initialized) {
       _initialize();
       window.zeroauth.initialized = true;
       window.zeroauth.options = {
