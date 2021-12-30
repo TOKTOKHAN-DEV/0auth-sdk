@@ -44,7 +44,7 @@ var getOptions = function () {
 exports.getOptions = getOptions;
 var initialize = function (option) {
     if (typeof window !== "undefined") {
-        if (!window.zeroauth.initialized) {
+        if (window.zeroauth && !window.zeroauth.initialized) {
             _initialize();
             window.zeroauth.initialized = true;
             window.zeroauth.options = {
@@ -69,7 +69,7 @@ exports.initialize = initialize;
 var login = function () {
     var options = (0, exports.getOptions)();
     if (options.brand) {
-        window.location.href = "//" + options.brand + "." + URL + "/?next=" + window.location.href;
+        window.location.href = "//".concat(options.brand, ".").concat(URL, "/?next=").concat(window.location.href);
     }
     else {
         console.error(contants_1.default.ERROR_INIT);
